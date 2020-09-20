@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="container message-con">
+    <h1 id="message-head">Suggest Us Here.</h1>
+    <p id="message-para">If you have any suggestions or you got any new ideas for us, then please let we know.</p>
+    <div class="main-div">
+        <div class="cartoon-img">
+            <img src="{% static 'images/typing-cartoon.png' %}" alt="">
+        </div>
+        <div class="cust-details-box">
+            <h2>Please write some words for us.</h2>
+            <div class="bottom-line1"></div>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="cust-details">
+                    {{ form.name.errors }}
+                    <h3>Full Name:</h3>
+                    {{form.name}}
+                    <!-- <input type="text" name="name"> -->
+                </div>
+                <div class="cust-details">
+                    {{ form.city.errors }}
+                    <h3>City/Village Name:</h3>
+                    {{form.city}}
+                    <!-- <input type="text" name="city"> -->
+                </div>
+                <div class="cust-details">
+                    {{ form.mobile.errors }}
+                    <h3>Mobile No.:</h3>
+                    {{form.mobile}}
+                    <!-- <input type="text" name="mobile"> -->
+                </div>
+                <div class="cust-details">
+                    {{ form.prod_buyed.errors }}
+                    <h3>What products you buyed from us before?:</h3>
+                    {{form.prod_buyed}}
+                    <!-- <input type="text" name="product"> -->
+                </div>
+                <div class="cust-details">
+                    {{ form.message.errors }}
+                    <h3>Message for us:</h3>
+                    {{form.message}}
+                    
+                    <!-- <textarea name="massage" rows="1"></textarea> -->
+                </div>
+                <div class="cust-details">
+                    <button class="btn float-right">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

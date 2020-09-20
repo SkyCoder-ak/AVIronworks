@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+/* body{
+    background-color: rgb(59, 59, 59);
+} */
+
+.p-d-row{
+    background-color: rgb(46, 46, 46);
+    margin: 5rem 5rem 2rem 5rem;
+    border: 2px solid rgba(7, 255, 243, 0.705);
+    border-radius: 0.6rem;
+    box-shadow: 0px 5px 24px 0px rgb(0, 0, 0);
+    
+    /* box-shadow: 0 19px 38px rgba(rgb(3, 252, 169), .30),0 15px 12px rgba(rgb(4, 255, 222), .22) ; */
+    
+}
+
+.p-d-row::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.prod_details-img-box{
+    float: left;
+    height: auto;
+    width: 50%;
+}
+
+.prod_details-img-box img{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+    /* object-fit: cover; */
+}
+/* --------------product description--------------- */
+.product-details-box{
+    padding: 2rem;
+    float: left;
+    width: 50%;
+}
+.p-d-name{
+    font-size: 2.1rem;
+    font-family: 'Lemonada', cursive;
+    color: rgb(91, 245, 245);
+}
+.bottom-line{
+    padding: 0.2rem;
+    width: 97%;
+    border: 1px solid rgb(167, 161, 161);
+    background-color: rgba(29, 212, 212, 0.123);
+    border-radius: 2rem;
+}
+.prod-details{
+    margin-top: 2rem;
+}
+.prod-details li{
+    margin-bottom: 0.8rem;
+    list-style: none;
+    margin-left: 2rem;
+    border: 1px solid aqua;
+    border-radius: 2rem;
+}
+.prod-details li p{
+    margin-left: 1rem;
+    font-size: 1.8rem;
+}
+.prod-details h3,p{
+    font-family: 'Play', sans-serif;
+    display: inline-block;
+}
+.prod-details li i{
+    margin-left: 0.6em;
+    margin-right: 0.4em;
+    color: aqua;
+}
+.prod-details li h3{
+    font-size: 1.9em;
+    color: rgb(255, 255, 255);
+}
+.prod-details p{
+    color: rgb(209, 209, 209);
+    font-family: 'Sriracha', cursive;
+}
+.prod-details span{
+    font-size: 1.3rem;
+}
+
+/* ---------------------------- contacat button---------------------- */
+.contact-btn{
+    margin: 0 5rem 4rem 5rem;
+}
+.contact-btn a{
+    display: inline-block;
+    padding: 0.8rem;
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
+    color: rgb(0, 183, 255);
+    font-family: 'Lemonada', cursive;
+    border-radius: 1rem;
+    text-decoration: none;
+    background-color: rgb(59, 59, 59);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    transition-duration: 0.7s;
+    box-shadow: -5px -5px 6px rgba(255, 255, 255, 0.315),5px 5px 6px rgba(0, 0, 0, 0.863);
+}
+
+.contact-btn a:hover{
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.918),1px 1px 4px rgba(255, 255, 255, 0.767);
+    color: aqua;
+}
+
+/* ----------------------------------- media queries------------------- */
+@media (max-width:601px){
+    html{
+        font-size: 60%;
+    }
+    .p-d-row{
+        margin: 4rem auto;
+        width: 97%;
+        border: none;
+        float: none;
+    }
+    .prod_details-img-box{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+    .prod-details li{
+        margin-left: 0px;
+    }
+    .prod_details-img-box img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .product-details-box{
+        /* display: block; */
+        width: 100%;
+    }
+}

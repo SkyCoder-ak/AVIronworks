@@ -1,0 +1,28 @@
+
+.thanks-con{
+    margin-top: 3rem ;
+    margin-bottom: 3rem;
+    
+}
+.thanks-jumbo{
+    /* border-top-left-radius: 3rem;
+    border-bottom-right-radius: 3rem; */
+    border-radius: 2rem;
+    padding: 10rem 2rem;
+    /* border: 1px solid rgb(187, 255, 0); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.thanks-head{
+    color: rgb(255, 255, 0);
+    font-size: 4.2rem;
+    font-weight: bold;
+}
+.thanks-para{
+    font-size: 1.8rem;
+    color: rgb(166, 255, 0);
+}
+.thanks-btn{
+    margin-top: 5rem;
+    margin-bottom: 0;
+}

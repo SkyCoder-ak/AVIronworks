@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="row img-row">
+    <img src="{% static "images/bird.jpg"%}" alt="image">
+    <div class="img-row-heading">
+        <h1>Services</h1>
+        <p>that we offer...</p>
+    </div>
+</div>
+
+<section>
+    <div class="section-heading">
+        <h1>OUR <span>SERVICES</span></h1>
+    </div>
+    <div class="img-row-bottom-line"></div>
+    <div class="container">
+        <div class="section-row">
+            <div class="img-box">
+                <img src="{% static 'images/arc-welding2.png' %}" alt="Arc Welding">
+            </div>
+            <div class="text-box">
+                <h2 class="text-box-heading">Arc Welding</h2>
+                <p class="text-box-para">This is our main service. We offer arc welding at very reasonable price.
+                    Materials that we welded will have long life. The quality of our welding is non breakable. Customer
+                    that experienced our welding service, gives us very good feedback and that is encourage us more and
+                    more.</p>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="text-box">
+                <h2 class="text-box-heading">Drilling</h2>
+                <p class="text-box-para">We offer mainly iron drilling and other than small size wood drilling, some
+                    concrete drilling etc. At the time of drilling we take care about the accurate measurements and do
+                    not reduce the strength of materials.</p>
+            </div>
+            <div class="img-box img-box2">
+                <img src="{% static 'images/big-drill.png' %}" alt="Drilling">
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="img-box img-box3">
+                <img src="{% static 'images/cutting-machine.png' %}" alt="Cutting">
+            </div>
+            <div class="text-box">
+                <h2 class="text-box-heading">Cutting</h2>
+                <p class="text-box-para">We offer the cutting of any iron material with the measurements which you want.
+                </p>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="text-box">
+                <h2 class="text-box-heading">Screw Fitting</h2>
+                <p class="text-box-para">Actually this is not our main service but if you individually want to fit tins
+                    with screw then we can do. Don't care about quality we take care about that, we can fix it very
+                    well.</p>
+            </div>
+            <div class="img-box img-box4">
+                <img src="{% static 'images/screw-machine.png' %}" alt="screw-machine">
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="img-box img-box5">
+                <img src="{% static 'images/tin-shed-house.png' %}" alt="Cutting">
+            </div>
+            <div class="text-box">
+                <h2 class="text-box-heading">Tin Sheds Constructions</h2>
+                <p class="text-box-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ratione id accusamus enim, corrupti vel beatae odio atque alias quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quaerat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="container thanks-con" >
+    <div class="jumbotron thanks-jumbo" style="background-image: url('{% static "images/butterfly.jpg"%}')";>
+        <h1 class="display-4 thanks-head">Thanks For Suggestion.</h1>
+        <hr class="my-4">
+        <p class="thanks-para">Thank you very much, we will definitly think about your suggestion.</p><br>
+        <a class="btn btn-primary btn-lg thanks-btn" href="/" role="button">Go to Home Page</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="container thanks-con" >
+    <div class="jumbotron thanks-jumbo" style="background-image: url('{% static "images/thank-bg.jpg"%}')";>
+        <h1 class="display-4 thanks-head">Thanks For Contacting Us!</h1>
+        <hr class="my-4">
+        <p class="thanks-para">We care about your every inquiry. Be some patient we will shortly in touch with you.</p><br>
+        <a class="btn btn-primary btn-lg thanks-btn" href="/" role="button">Go to Home Page</a>
+    </div>
+</div>
+{% endblock %}

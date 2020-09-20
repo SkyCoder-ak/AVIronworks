@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+<!-- </header> -->
+<section class="section">
+    <div class="row my-row-2">
+        <div class="col-sm-10">
+            <div class="col-10-head">
+                <h1 class="my-row-1-headings text-light">Your Searched Products:</h1>
+                <div class="row1-head-border"></div>
+            </div>
+            <div id="searched_products">
+                {% for prod in searched_products %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-md-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{prod.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{prod.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{prod.prod_price}}</p>
+                                <a href="/product-details/{{prod.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock %}

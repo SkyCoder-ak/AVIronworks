@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400;1,500;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: rgb(73, 73, 73);
+}
+/* .about-con{
+    
+} */
+.about-head h1 {
+    color: rgb(248, 33, 105);
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+}
+.about-head p {
+    color: rgb(193, 255, 219);
+    font-size: 1.6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.about-head-bottom {
+    margin: auto;
+    border: 2px solid rgba(29, 255, 59, 0.972);
+    width: 17rem;
+}
+.owner-row {
+  display: flex;
+  padding: 1rem;
+}
+.owner-details {
+  border: inset 2px solid;
+  background: none;
+  margin-left: 7rem;
+  padding-top: 2rem;
+  padding-right: 6rem;
+}
+.owner-details h2 {
+  font-family: "Courgette", cursive;
+  color: aqua;
+}
+.owner-details p {
+    color: beige;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 150%;
+}
+.owner {
+  margin: 1rem 1rem 1rem 7rem;
+  text-align: center;
+}
+.about-head {
+  display: block;
+  margin-top: 2rem;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.owner img {
+  width: 15rem;
+  height: 16rem;
+}
+.owner h2 {
+  color: rgb(219, 219, 219);
+}
+.owner p {
+  color: rgb(0, 255, 200);
+  font-size: 1.4rem;
+}
+
+.about-row-1 {
+  display: flex;
+  padding: 2rem;
+  border-radius: 3rem;
+}
+.about-row-1 .box{
+    width: 33.3333%;
+}
+.about-row-1 .box p {
+    text-align: center;
+  font-family: "Courgette", cursive;
+  font-size: 1.6rem;
+}
+.about-row-1 .box img {
+  display: block;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0);
+  width: 15rem;
+  height: 15rem;
+}
+.about-row-1 .box h2 {
+    margin-top: 1rem;
+  font-family: "Courgette", cursive;
+  color: aqua;
+  text-align: center;
+}
+.about-row-1 .box p {
+  color: rgb(255, 255, 255);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ----------------------------- MEDIA QUERIES ------------------- */
+@media (max-width: 601px) {
+  html {
+    font-size: 50%;
+  }
+  /* .owner-row{
+        display: block;
+    } */
+  .about-row-1 {
+    display: block;
+  }
+  .owner {
+    margin: 0;
+  }
+  /* .owner h2, .owner p{
+        width: 100%;
+        text-align: center;
+    } */
+  .owner-details {
+    margin-left: 2rem;
+    padding-top: 0.2rem;
+    padding-right: 0rem;
+  }
+  .owner img {
+    width: 70%;
+    height: 63%;
+  }
+  .about-row-1 .box{
+    width: 100%;
+    }
+}
+
+

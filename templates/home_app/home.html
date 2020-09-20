@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div id="my-slider" class="my-slider">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for slide in data %}
+            <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                <img src="{{ slide.slider_img.url }}" class="d-block w-100" alt="image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="slider-heading md-head">{{ slide.slider_head }}</h5><br>
+                    <p class="slider-para">{{ slide.slider_desc }}</p><br>
+                    <!-- <button type="button" class="btn btn-lg slider-btn">Details</button>
+                        <button type="button" class="btn btn-lg slider-btn">Inquiry</button> -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!-- </header> -->
+<section class="section">
+    <div class="row my-row-2">
+        <div class="col-sm-2 my-col-2">
+            <h1 class="my-row-1-headings text-light">Categories:</h1>
+            <ul class="cat-ul">
+                <li class="cat-list-item"><a href="/"><i class="fas fa-caret-right"></i>All Products</a></li><br>
+                <li class="cat-list-item"><a href="#gates" onclick="javascript:display_gates()"><i
+                            class="fas fa-caret-right"></i>Gates and Doors</a></li><br>
+                <li class="cat-list-item"><a href="#grills" onclick="javascript:display_grills()"><i
+                            class="fas fa-caret-right"></i>Grills</a></li><br>
+                <li class="cat-list-item"><a href="#farming_tools" onclick="javascript:display_farming_tools()"><i
+                            class="fas fa-caret-right"></i>Farming Tools</a>
+                </li><br>
+                <li class="cat-list-item"><a href="#tin_sheds" onclick="javascript:display_tin_sheds()"><i
+                            class="fas fa-caret-right"></i>TinSheds</a></li><br>
+                <li class="cat-list-item"><a href="#coolers" onclick="javascript:display_coolers()"><i
+                            class="fas fa-caret-right"></i>Air Coolers</a></li><br>
+                <li class="cat-list-item"><a href="#makhars" onclick="javascript:display_makhars()"><i
+                            class="fas fa-caret-right"></i>Gauri Makhars</a></li><br>
+                <li class="cat-list-item"><a href="#stairs" onclick="javascript:display_stairs()"><i
+                            class="fas fa-caret-right"></i>Stairs</a></li><br>
+                <li class="cat-list-item"><a href="#shutters" onclick="javascript:display_shutters()"><i
+                            class="fas fa-caret-right"></i>Shutters</a></li><br>
+                <li class="cat-list-item"><a href="#others" onclick="javascript:display_others()"><i
+                            class="fas fa-caret-right"></i>Others</a></li><br>
+            </ul>
+        </div>
+        <!-- <div id="prod-on-pc"> -->
+        <div class="col-sm-10">
+            <div class="col-10-head">
+                <h1 class="my-row-1-headings text-light">Our Letest Products:</h1>
+                <div class="row1-head-border"></div>
+            </div>
+            <div id="all-products">
+                {% for p in products %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{p.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{p.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{p.prod_price}}</p>
+                                <a href="/product-details/{{p.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="gates">
+                {% for gate in gates %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{gate.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{gate.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{gate.prod_price}}</p>
+                                <a href="/product-details/{{gate.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="grills">
+                {% for gr in grills %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{gr.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{gr.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{gr.prod_price}}</p>
+                                <a href="#" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="farming_tools">
+                {% for tool in farming_tools %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{tool.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{tool.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{tool.prod_price}}</p>
+                                <a href="/product-details/{{tool.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="tin_sheds">
+                {% for shed in tin_sheds %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{shed.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{shed.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{shed.prod_price}}</p>
+                                <a href="/product-details/{{shed.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="coolers">
+                {% for cooler in air_coolers %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{cooler.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{cooler.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{cooler.prod_price}}</p>
+                                <a href="/product-details/{{cooler.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="makhars">
+                {% for makhar in gauri_makhars %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{makhar.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{makhar.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{makhar.prod_price}}</p>
+                                <a href="/product-details/{{makhar.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="stairs">
+                {% for stair in stairs %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{stair.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{stair.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{stair.prod_price}}</p>
+                                <a href="/product-details/{{stair.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="shutters">
+                {% for shutter in shutters %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{shutter.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{shutter.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{shutter.prod_price}}</p>
+                                <a href="/product-details/{{shutter.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+            <div id="others">
+                {% for other in others %}
+                {% if forloop.counter0|divisibleby:6 %} <div class="row grid-container"> {%  endif %}
+                    <div class="col-2">
+                        <div class="card my-card" style="width: 17rem;">
+                            <img src="{{other.prod_img.url}}" class="card-img-top" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{other.prod_head}}</h5>
+                                <p class="card-text"><span>Price:</span> Rs.{{other.prod_price}}</p>
+                                <a href="/product-details/{{other.id}}" class="btn btn-primary card-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    {%  if forloop.counter|divisibleby:6 or forloop.last %}</div>
+                <hr>{%  endif %}
+                {%endfor%}
+            </div>
+
+        </div>
+        
+    </div>
+    </div>
+</section>
+{% endblock %}

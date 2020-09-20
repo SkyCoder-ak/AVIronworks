@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="container">
+    <h1 class="contact-heading">Contact Us</h1>
+    <div class="chbl"></div>
+    <div class="contact-row">
+        <div class="contact-details">
+
+            <div class="row0">
+                <h2>Contact Details</h2>
+                <div class="row0-bottom-line"></div>
+                <p>If you need more contact details, check out below.</p>
+            </div>
+            <!-- <div class="icon-div">
+                <i class="far fa-address-card"></i>
+            </div> -->
+            <div class="row1 each-row">
+                <h2><i class="fas fa-envelope"></i>Email:</h2>
+                <p>avironworks21@gmail.com</p>
+            </div>
+            <div class="each-row row2">
+                <h2><i class="fas fa-phone-volume"></i>Call:</h2>
+                <p>+91-9767920549</p>
+            </div>
+            <div class="each-row row3">
+                <h2><i class="fab fa-whatsapp"></i>WhatsApp-1:</h2>
+                <p>9623822004</p>
+            </div>
+            <div class="each-row row4">
+                <h2><i class="far fa-address-card"></i>Address:</h2>
+                <p>At.Wadgaon Mali,Mehkar Dist.Buldana</p>
+            </div>
+            <!-- <div class="each-row row5">
+                <img src="" alt="">
+            </div> -->
+        </div>
+        <div class="contact-form">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="row0">
+                    <h2>Contact Form</h2>
+                    <div class="row0-bottom-line"></div>
+                    <p>Let us know your questions and inquries by filling our this form.</p>
+                </div>
+                {{ form.non_field_errors }}
+                <div class="each-row row1">
+                    {{ form.name.errors }}
+                    <h2>Full Name:</h2>
+                    <!-- <input type="text" name="name" id="name"> -->
+                    {{form.name}}
+                </div>
+                <div class="each-row row2">
+                    {{ form.city.errors }}
+                    <h2>City/Village Name: </h2>
+                    {{form.city}}
+                    <!-- <input type="text" name="city" id="city"> -->
+                </div>
+                <div class="each-row row3">
+                    {{form.mobile.errors}}
+                    <h2>Mobile No.</h2>
+                    {{form.mobile}}
+                    <!-- <input type="text" name="mobile" id="mobile"> -->
+                </div>
+                <div class="each-row row4">
+                    {{form.message.errors}}
+                    <h2>Inquiry Message:</h2>
+                    {{form.message}}
+                    <!-- <textarea id="message" name="message"></textarea> -->
+                </div>
+                <div class="contact-form-btn">
+                    <button type="submit">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

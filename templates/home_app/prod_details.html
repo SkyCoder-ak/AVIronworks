@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'home_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+<div class="p-d-row">
+        <!-- <div class="col-sm-7"> -->
+        <div class="prod_details-img-box">
+            <img src="{{product.prod_img.url}}" alt="image">
+        </div>
+        <div class="product-details-box">
+            <h2 class="p-d-name"">{{product.prod_head}}</h2>
+            <div class="bottom-line"></div>
+            <ul class="prod-details">
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Price:</h3>
+                    <p> Rs.{{product.prod_price}}ru.</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Width:</h3>
+                    <p> {{product.prod_width}}ft.</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Height:</h3>
+                    <p> {{product.prod_height}}ft.</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Weight:</h3>
+                    <p> {{product.prod_weight}}kg. <span>(approx).</span></p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Color:</h3>
+                    <p> {{product.prod_color}}</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Installation Facility:</h3>
+                    <p> {{product.prod_inst_facility}}</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Accessories:</h3>
+                    <p> {{product.prod_accessories}}</p>
+                </li>
+                <li>
+                    <h3><i class="fas fa-angle-right"></i>Description:</h3>
+                    <p>{{product.prod_desc}}</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="row contact-btn glow">
+        <a href="/contact" class="btn ml-auto">Contact For Inquiry</a>
+    </div>
+{% endblock %}
